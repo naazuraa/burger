@@ -46,5 +46,45 @@
         Explore Full Menu
       </button>
     </div>
+
+    <div id="section-3" class="text-center">
+      <h2 class="text-6xl font-oswals text-red-500 uppercase font-medium pt-20">
+        Our Crazy Burgers
+      </h2>
+      <p class="text-gray-500 font-light text-xl my-10 px-20">
+        Whether you are looking for the classics, our specialities, or just wraps, salads,
+        and fries. We have it all. We always have something that rewards your tastebud.
+      </p>
+      <div class="grid grid-cols-2 px-40 gap-5">
+        <div id="left-item-column">
+          <Item
+            image="crispy-chicken.jpg"
+            title="Crispy Chicken"
+            description="Chicken breast, chilli sauce, tomatoes, pickles, coleslaw"
+            price="11.99"
+          />
+          <Item
+            image="baa-baa.jpg"
+            title="Baa-Baa Black Sheep"
+            description="American cheese, tomato relish, avocado, juicy lamb patty"
+            price="15.75"
+          />
+        </div>
+        <div id="right-item-column">
+          <Item
+            image="ultimate-bacon.jpg"
+            title="Ultimate Bacon"
+            description="House beef patty, cheddar cheese, smokey bacon, onion, mustard"
+            price="14.99"
+          />
+          <Item
+            image="double-burger.jpg"
+            title="Double Burger"
+            description="2 x beef patties, cheddar cheese, mustard, pickles, tomatoes"
+            price="15.35"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
