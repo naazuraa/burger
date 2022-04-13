@@ -18,27 +18,32 @@
         </div>
       </div>
       <h1 class="text-white font-oswald uppercase text-6xl text-center pt-24 pb-28">
-        Our Menu
+        Shopping Cart
       </h1>
     </div>
-
-    <div id="items" class="grid grid-cols-3 gap-x-5 gap-y-16 mt-10 mx-20">
-      <MenuItem v-for="b in items" :key="b.name" :item="b" />
-    </div>
+    <table class="table-auto w-2/3 mt-20 mx-auto">
+      <thead>
+        <tr>
+          <th class="text-left">Name</th>
+          <th class="text-right">Price</th>
+          <th>Quantity</th>
+          <th class="text-right">Total</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="order in $store.state.orders"
+          :key="order.name"
+          class="font-oswald uppercase text-2xl border-b"
+        >
+          <td class="py-10">{{ order.name }}</td>
+          <td>RM {{ order.price }}</td>
+          <td class="text-center">{{ order.quantity }}</td>
+          <td>{{ order.price * order.quantity }}</td>
+          <td class="text-center"><button>✖️</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      items: [],
-    };
-  },
-  mounted() {
-    this.$axios.get('items.json').then((response) => {
-      this.items = response.data.burgers;
-    });
-  },
-};
-</script>

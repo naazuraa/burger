@@ -4,7 +4,7 @@
     <h3 class="font-oswald font-medium text-2xl uppercase text-gray-500 mt-5 mb-2 ml-5">
       {{ title }}
     </h3>
-    <p class="font-light text-gray-500 mb-5 ml-5">
+    <p class="font-light text-gray-500 mb-5 ml-5 min-h-[100px]">
       {{ description }}
     </p>
     <span

@@ -1,3 +1,3 @@
 <template>
-  <img src="logo.png" alt="" />
+  <img src="/logo.png" alt="" />
 </template>
