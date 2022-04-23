@@ -38,12 +38,37 @@
           class="font-oswald uppercase text-2xl border-b"
         >
           <td class="py-10">{{ order.name }}</td>
-          <td>RM {{ order.price }}</td>
+          <td>RM {{ order.price.toFixed(2) }}</td>
           <td class="text-center">{{ order.quantity }}</td>
-          <td>{{ order.price * order.quantity }}</td>
-          <td class="text-center"><button>✖️</button></td>
+          <td>{{ (order.price * order.quantity).toFixed(2) }}</td>
+          <td class="text-center"><button @click="removeItem (order.name)">✖️</button></td>
         </tr>
       </tbody>
+      <tfoot class="font-oswald font-bold text-2xl bg-gray-100 uppercase">
+        <td class="py-10" colspan="3">Total</td>
+        <td>RM {{ total.toFixed(2) }}</td>
+        <td>&nbsp;</td>
+      </tfoot>
     </table>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    total() {
+      let total = 0;
+      this.$store.state.orders.forEach((order) => {
+        total = total + (order.price * order.quantity);
+      });
+      return total;
+    },
+  },
+
+  methods: {
+    removeItem(name) {
+      this.$store.commit('removeItem', name);
+    },
+  },
+};
+</script>
