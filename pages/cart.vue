@@ -3,7 +3,7 @@
     <div class="bg-[url('/menu-page.jpg')] px-20">
       <div id="menu" class="grid grid-cols-2 py-5">
         <div id="menu-left">
-          <img src="logo.png" class="w-[150px]" alt="" />
+          <img src="/logo.png" class="w-[150px]" alt="" />
         </div>
 
         <div id="menu-right">
@@ -21,7 +21,7 @@
         Shopping Cart
       </h1>
     </div>
-    <table class="table-auto w-2/3 mt-20 mx-auto">
+    <table class="table-auto w-2/3 mt-20 mx-auto mb-20">
       <thead>
         <tr>
           <th class="text-left">Name</th>
@@ -41,13 +41,33 @@
           <td>RM {{ order.price.toFixed(2) }}</td>
           <td class="text-center">{{ order.quantity }}</td>
           <td>{{ (order.price * order.quantity).toFixed(2) }}</td>
-          <td class="text-center"><button @click="removeItem (order.name)">✖️</button></td>
+          <td class="text-center"><button @click="removeItem(order.name)">✖️</button></td>
         </tr>
       </tbody>
-      <tfoot class="font-oswald font-bold text-2xl bg-gray-100 uppercase">
-        <td class="py-10" colspan="3">Total</td>
-        <td>RM {{ total.toFixed(2) }}</td>
-        <td>&nbsp;</td>
+      <tfoot>
+        <tr class="font-oswald font-bold text-2xl bg-gray-100 uppercase">
+          <td class="py-10" colspan="3">Total</td>
+          <td>RM {{ total.toFixed(2) }}</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <input
+              id="email"
+              type="email"
+              placeholder="Please enter your email"
+              class="w-full border border-gray-300 text-xl mt-5 py-3 px-2"
+            />
+          </td>
+          <td colspan="2" class="text-right">
+            <button
+              class="font-oswald uppercase bg-red-500 text-white text-xl py-3 px-2 ml-5 mt-5"
+              @click="submitOrder"
+            >
+              Confirm My Order
+            </button>
+          </td>
+        </tr>
       </tfoot>
     </table>
   </div>
@@ -59,7 +79,7 @@ export default {
     total() {
       let total = 0;
       this.$store.state.orders.forEach((order) => {
-        total = total + (order.price * order.quantity);
+        total = total + order.price * order.quantity;
       });
       return total;
     },
@@ -68,6 +88,12 @@ export default {
   methods: {
     removeItem(name) {
       this.$store.commit('removeItem', name);
+    },
+    submitOrder() {
+      this.$axios.post('/.netlify/functions/email', {
+        email: document.getElementById('email').value,
+        orders: this.$store.state.orders,
+      });
     },
   },
 };
