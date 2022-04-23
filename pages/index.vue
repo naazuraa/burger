@@ -4,7 +4,7 @@
 			<!-- <p>This is a hero section.</p> </!-->
 			<div id="menu" class="grid grid-cols-2 py-5">
 				<div id="menu-left">
-					<img src="logo.png" class="w-[150px]" alt="" />
+					<img src="/logo.png" class="w-[150px]" alt="" />
 				</div>
 
 				<div id="menu-right">
@@ -18,7 +18,7 @@
 				</div>
 			</div>
 			<div class="grid grid-cols-2 pt-10 pb-20">
-				<img src="hero-burger.png" class="pr-8 mt-10" alt="" />
+				<img src="/hero-burger.png" class="pr-8 mt-10" alt="" />
 				<div>
 					<h1 class="text-8xl text-white text-center font-lilita uppercase">
 						Classic Burger
@@ -58,13 +58,13 @@
 			<div class="grid grid-cols-2 px-40 gap-5">
 				<div id="left-item-column">
 					<Item
-						image="crispy-chicken.jpg"
+						image="/crispy-chicken.jpg"
 						title="Crispy Chicken"
 						description="Chicken breast, chilli sauce, tomatoes, pickles, coleslaw"
 						price="11.99"
 					/>
 					<Item
-						image="baa-baa.jpg"
+						image="/baa-baa.jpg"
 						title="Baa-Baa Black Sheep"
 						description="American cheese, tomato relish, avocado, juicy lamb patty"
 						price="15.75"
@@ -72,13 +72,13 @@
 				</div>
 				<div id="right-item-column">
 					<Item
-						image="ultimate-bacon.jpg"
+						image="/ultimate-bacon.jpg"
 						title="Ultimate Bacon"
 						description="House beef patty, cheddar cheese, smokey bacon, onion, mustard"
 						price="14.99"
 					/>
 					<Item
-						image="double-burger.jpg"
+						image="/double-burger.jpg"
 						title="Double Burger"
 						description="2 x beef patties, cheddar cheese, mustard, pickles, tomatoes"
 						price="15.35"
