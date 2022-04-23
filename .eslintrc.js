@@ -17,6 +17,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'space-before-function-paren': 0,
+    "no-tabs": ["error", { "allowIndentationTabs": true }],
     'vue/singleline-html-element-content-newline': 'off',
     "vue/require-prop-types": "off",
     "vue/html-indent": "off",
