@@ -5335,7 +5335,7 @@
     "@google-cloud/firestore" "^4.15.1"
     "@google-cloud/storage" "^5.18.3"
 
-"firebase@^9.6.10", "firebase@^9.6.2":
+"firebase@^9.6.11", "firebase@^9.6.2":
   "integrity" "sha512-Zdmag/wGNkA4IAek+2yQoWrF2vyqIowu+2eOcSaE6jE2hDZYA3nHNutsQ+jquSxE3SeJk3Dh1OEsffqgunBy/w=="
   "resolved" "https://registry.npmjs.org/firebase/-/firebase-9.6.11.tgz"
   "version" "9.6.11"

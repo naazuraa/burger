@@ -94,6 +94,11 @@ export default {
         email: document.getElementById('email').value,
         orders: this.$store.state.orders,
       });
+
+      this.$axios.post('/.netlify/functions/db', {
+        email: document.getElementById('email').value,
+        orders: this.$store.state.orders,
+      })
     },
   },
 };
