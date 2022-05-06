@@ -31,6 +31,8 @@
               Order ID - {{ order.id }}
             </h1>
           </td>
+        </tr>
+        <tr>
           <th class="text-left">Name</th>
           <th class="text-right">Price</th>
           <th>Quantity</th>
@@ -47,7 +49,6 @@
           <td>RM {{ item.price.toFixed(2) }}</td>
           <td class="text-center">{{ item.quantity }}</td>
           <td>{{ (item.price * item.quantity).toFixed(2) }}</td>
-          <td class="text-center"><button @click="removeItem(item.name)">✖️</button></td>
         </tr>
       </tbody>
     </table>
