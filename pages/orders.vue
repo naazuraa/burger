@@ -1,5 +1,6 @@
 <template>
   <div>
+  <div>
     <div class="bg-[url('/menu-page.jpg')] px-20">
       <div id="menu" class="grid grid-cols-2 py-5">
         <div id="menu-left">
@@ -21,7 +22,7 @@
         Orders
       </h1>
     </div>
-
+    </div>
     <table v-for="order in orders" :key="order.id" class="table-auto w-2/3 mt-20 mx-auto mb-20">
       <thead>
         <tr>
